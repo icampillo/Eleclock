@@ -1,0 +1,98 @@
+.clock-content {
+    padding-top: 50px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.date {
+    font-size: 34px;
+    font-weight: bold;
+    color: #333;
+}
+
+.clock {
+    margin-top: -30px;
+    font-size: 100px;
+    font-weight: bold;
+    color: #333;
+}
+
+.title {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 46px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+
+.input-content {
+    /* Add your styles here */
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #333;
+    margin-top: -40px;
+}
+
+.alarms-content {
+    /* Add your styles here */
+    padding-top: 30px;
+    padding-bottom: 70px;
+    display: grid;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+}
+
+/* Style de l'input time */
+input[type="time"] {
+    padding: 8px; /* Espacement interne */
+    font-size: 16px; /* Taille de la police */
+    border: 0px solid #ccc;
+    border-radius: 4px; /* Coins arrondis */
+    outline: none; /* Supprimer l'effet d'outline */
+    background-color: transparent;
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+button {
+    padding: 8px 16px; /* Espacement interne */
+    font-size: 16px; /* Taille de la police */
+    border: none; /* Supprimer la bordure */
+    background-color: dodgerblue; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border-radius: 25px; /* Coins arrondis */
+    cursor: pointer; /* Curseur au survol */
+}
+
+button:hover {
+   opacity: 0.7;
+}
+
+.alarm-row {
+    /* Add your styles here */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    border: 1px solid #333;
+    border-radius: 25px;
+    width: 250px;
+}
+
+.clock-alarm {
+    /* Add your styles here */
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
+}

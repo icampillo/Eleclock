@@ -1,0 +1,12 @@
+.main-title {
+    font-size: 2rem;
+    font-size: 45px;
+    color: #333;
+    text-align: center;
+}
+
+.button-panel {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
