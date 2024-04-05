@@ -1,2 +1,2 @@
-export * from "./clock/Clock";
+export * from "./alarm/Alarm";
 export * from "./alarmRow/alarm-row";
