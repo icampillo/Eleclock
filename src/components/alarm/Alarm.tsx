@@ -5,10 +5,10 @@ import { AlarmRow } from '../alarmRow/alarm-row';
 import { formatDate } from '../../helper';
 import { Alarm } from '../../types';
 
-import "./clock.css";
+import "./alarm.css";
 import { deleteAlarm, getAlarms, addAlarm } from '../../services/AlarmServices';
 
-export const Clock = () => {
+export const AlarmView = () => {
   const [time, setTime] = useState(new Date());
   const [alarms, setAlarms] = useState([] as Alarm[]);
   const [isLoaded, setIsLoaded] = useState(false);

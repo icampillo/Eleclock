@@ -2,7 +2,7 @@
   "name": "electron-ts-react-app",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "dist/server/main.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
@@ -16,9 +16,7 @@
     "@tanstack/react-query": "^5.28.14",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.23",
-    "electron": "^29.1.6",
     "expo-av": "^13.10.5",
-    "play-sound": "^1.1.6",
     "react": "^18.2.0",
     "react-clock": "^4.6.0",
     "react-dom": "^18.2.0",
@@ -26,8 +24,7 @@
     "react-toastify": "^10.0.5",
     "sound-play": "^1.1.0",
     "sqlite3": "^5.1.7",
-    "typescript": "^5.4.3",
-    "use-sound": "^4.0.1"
+    "ts-audio": "^0.7.4"
   },
   "devDependencies": {
     "@babel/core": "^7.24.3",
@@ -37,11 +34,13 @@
     "@types/webpack-dev-server": "^4.7.2",
     "babel-loader": "^9.1.3",
     "css-loader": "^6.10.0",
+    "electron": "^29.2.0",
     "html-webpack-plugin": "^5.6.0",
     "node-sass": "^9.0.0",
     "sass-loader": "^14.1.1",
     "style-loader": "^3.3.4",
     "ts-loader": "^9.5.1",
+    "typescript": "^5.4.4",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"

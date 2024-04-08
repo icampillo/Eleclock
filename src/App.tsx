@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  Clock,
+  AlarmView,
+  Clock
 } from "./components";
 
 import "./app.css"
 
 export const App = () => {
-
   const [activeTab, setActiveTab] = React.useState('alarm');
 
   return (
@@ -17,8 +17,8 @@ export const App = () => {
         <button onClick={() => setActiveTab('clock')}>Horloge</button>
       </div>
       <div className='content'>
-        {activeTab === 'alarm' && <Clock />}
-        {activeTab === 'clock' && <>Woofffff</>}
+        {activeTab === 'alarm' && <AlarmView />}
+        {activeTab === 'clock' && <Clock/>}
       </div>
     </div>
   );
