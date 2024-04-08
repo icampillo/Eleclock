@@ -27,3 +27,12 @@ export const addAlarm = async (time:Date) => {
     throw error;
   }
 };
+
+export const handleAlarmOnOff = async (id: number, is_active: boolean) => {
+  try {
+    return ipcRender.invoke('handle-alarm-on-off', { id, is_active });
+  } catch (error) {
+    console.error('Error adding alarm:', error);
+    throw error;
+  }
+}

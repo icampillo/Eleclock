@@ -14,6 +14,7 @@ export const AlarmView = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const fetchData = async () => {
+    setIsLoaded(true);
     try {
       const data = await getAlarms();
       setAlarms(data);
@@ -41,10 +42,28 @@ export const AlarmView = () => {
     }
   };
 
+  const handleAlarmIsReady = async () => {
+    const audio = new Audio("https://universal-soundbank.com/sounds/1645.mp3");
+    audio.play();
+  };
+
+ 
+
   useEffect(() => {
     fetchData();
-    //futur handle alert alarm
-    window.ipcRender.on('alarm-alert', (data) => { console.log(data); });
+
+    window.ipcRender.on('alarm-alert', async (_event: Electron.IpcRendererEvent, id: number) => {
+      console.log('alarm-alert', id)
+      await handleAlarmIsReady();
+      const updatedAlarms = alarms.map((alarm: Alarm) => {
+        if (alarm.id === id) {
+          return { ...alarm, is_active: false };
+        }
+        return alarm;
+      });
+      setAlarms(updatedAlarms);
+    });
+    // window.ipcRender.on('alarm-alert', () => { handleAlarmIsReady() });
 
     const timer = setInterval(() => {
       setTime(new Date());

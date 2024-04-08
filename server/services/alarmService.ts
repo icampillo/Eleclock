@@ -62,4 +62,17 @@ export class AlarmService {
             });
         });
     }
+
+    static handleAlarmOnOff(id: number, is_active: boolean): Promise<void> {
+        return new Promise((resolve, reject) => {
+            db.run('UPDATE alarms SET is_active = ? WHERE id = ?', [is_active, id], function (err) {
+                if (err) {
+                    reject(err);
+                } else {
+                    console.log(`L'alarme avec l'ID ${id} a été activée/désactivée avec succès.`);
+                    resolve();
+                }
+            });
+        });
+    }
 }

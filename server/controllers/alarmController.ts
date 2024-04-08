@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { AlarmService } from '../services/alarmService';
 import { Alarm } from '../models/alarm';
+import { BrowserWindow, ipcMain } from 'electron';
 
 export class AlarmController {
 
@@ -29,7 +30,15 @@ export class AlarmController {
     }
   }
 
-  static async alarmIsReady(): Promise<void> {
+  static async handleAlarmOnOff(id: any, is_active: any): Promise<void> {
+    try {
+      return AlarmService.handleAlarmOnOff(id, is_active);
+    } catch (error) {
+      console.log("handleAlarmOnOff failed :", error)
+    }
+  }
+
+  static async alarmIsReady(mainWindow: BrowserWindow | null): Promise<void> {
     try {
       const alarms = await AlarmService.getActiveAlarms();
       const currentTime = new Date().toLocaleTimeString('en-US', { hour12: false });
@@ -40,9 +49,9 @@ export class AlarmController {
         const alarmMinute = dateObj.getMinutes().toString().padStart(2, '0');
         if (currentHour === alarmHour && currentMinute === alarmMinute) {
           await AlarmService.deactivateAlarm(alarm.id);
+          mainWindow?.webContents.send('alarm-alert', alarm.id);
         }
       });
-
     } catch (error) {
       console.log("alarmIsReady failed :", error)
     }

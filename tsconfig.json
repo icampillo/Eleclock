@@ -10,15 +10,17 @@
         "forceConsistentCasingInFileNames": true,
         "baseUrl": "./",
         "paths": {
-            "*": ["src/*"]
-          }
+            "*": [
+                "src/*"
+            ]
+        }
     },
     "include": [
         "server/**/*.ts",
         "src/**/*.ts",
         "src/**/*.tsx",
         "typings.d.ts"
-    ],
+, "server/main.ts"    ],
     "exclude": [
         "node_modules"
     ]

@@ -1,6 +1,5 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'path';
-import sqlite3 from 'sqlite3';
 
 import { AlarmController } from './controllers/alarmController';
 
@@ -43,7 +42,7 @@ app.on('activate', () => {
 
 //check every 3s if an alarm is ready
 setInterval(() => {
-  AlarmController.alarmIsReady();
+  AlarmController.alarmIsReady(mainWindow);
 }, 3000);
 
 // get alarms
@@ -74,5 +73,18 @@ ipcMain.handle('delete-alarm', async (event, args) => {
     return { success: true };
   } catch (error) {
     console.error('Error deleting alarm:', error);
+  }
+});
+
+// Handle alarm on/off
+ipcMain.handle('handle-alarm-on-off', async (event, args) => {
+  const id = args.id;
+  const is_active = args.is_active;
+  console.log('id', id)
+  try {
+    await AlarmController.handleAlarmOnOff(id, is_active);
+    return { success: true };
+  } catch (error) {
+    console.error('Error adding alarm:', error);
   }
 });
