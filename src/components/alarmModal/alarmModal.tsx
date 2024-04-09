@@ -28,7 +28,9 @@ const AlarmPopup: React.FC<AlarmPopupProps> = ({ alarm, onDismiss }) => {
       <div className="popup-content">
         <h2 className='title-modal'>Alarme</h2>
         <p className='alarm-modal'>{formatTimeHHMM(alarm.alarm_time)}</p>
-        <button onClick={handleDismiss}>Arreter</button>
+        <div className='centered'>
+          <button className="modal-btn" onClick={handleDismiss}>Arreter</button>
+        </div>
       </div>
     </div>
   );

@@ -7,6 +7,11 @@ import { deleteAlarm, addAlarm } from '../../services/AlarmServices';
 
 import "./alarm.css";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { formatTimeHHMM } from '../../helper';
+
 interface AlarmProps {
   alarms: Alarm[];
   fetchData: () => void;
@@ -18,6 +23,7 @@ export const AlarmComponent: React.FC<AlarmProps> = ({ alarms, fetchData }) => {
     try {
       await deleteAlarm(id);
       await fetchData();
+      toast(`Alarme supprimé ⏰`); // Remove extra curly braces
     } catch (error) {
       console.error('Error adding alarm:', error);
     }
@@ -27,6 +33,7 @@ export const AlarmComponent: React.FC<AlarmProps> = ({ alarms, fetchData }) => {
     try {
       await addAlarm(time);
       await fetchData();
+      toast(`Alarme enregistré pour ${formatTimeHHMM(time)} ⏰`); // Remove extra curly braces
     } catch (error) {
       console.error('Error adding alarm:', error);
     }
@@ -54,6 +61,7 @@ export const AlarmComponent: React.FC<AlarmProps> = ({ alarms, fetchData }) => {
           <AlarmRow alarm={alarm} index={index} deleteAlarm={handleDelete} fetchData={fetchData} key={index} />
         ))}
       </div>
+      <ToastContainer />
     </div>
   );
 };
