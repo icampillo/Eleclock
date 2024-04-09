@@ -2,8 +2,7 @@ const ipcRender = window.ipcRender;
 
 export const getAlarms = async () => {
   try {
-    const result = await ipcRender.invoke('get-alarms');
-    return result;
+    return ipcRender.invoke('get-alarms');
   } catch (error) {
     console.error('Error fetching alarms:', error);
     throw error;

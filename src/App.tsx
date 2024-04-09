@@ -1,8 +1,8 @@
 import React from 'react';
 import {
   AlarmView,
-  Clock
-} from "./components";
+  TimeView
+} from "./pages";
 
 import "./app.css"
 
@@ -18,7 +18,7 @@ export const App = () => {
       </div>
       <div className='content'>
         {activeTab === 'alarm' && <AlarmView />}
-        {activeTab === 'clock' && <Clock/>}
+        {activeTab === 'clock' && <TimeView/>}
       </div>
     </div>
   );

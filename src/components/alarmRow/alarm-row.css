@@ -1,0 +1,30 @@
+.alarm-row {
+  /* Add your styles here */
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: transparent;
+  border: 1px solid #333;
+  border-radius: 25px;
+  width: 250px;
+}
+
+.alarm-row-content {
+    display: flex;
+}
+
+.delete-button {
+    margin-top: 18px;
+    margin-left: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .react-switch {
+    vertical-align: middle;
+    margin-top: 6px;
+  }

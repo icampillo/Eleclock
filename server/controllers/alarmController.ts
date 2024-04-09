@@ -49,7 +49,7 @@ export class AlarmController {
         const alarmMinute = dateObj.getMinutes().toString().padStart(2, '0');
         if (currentHour === alarmHour && currentMinute === alarmMinute) {
           await AlarmService.deactivateAlarm(alarm.id);
-          mainWindow?.webContents.send('alarm-alert', alarm.id);
+          mainWindow?.webContents.send('alarm-alert', alarm);
         }
       });
     } catch (error) {
