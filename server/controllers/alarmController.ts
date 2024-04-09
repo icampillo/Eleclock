@@ -1,18 +1,14 @@
-import { Request, Response } from 'express';
 import { AlarmService } from '../services/alarmService';
 import { Alarm } from '../models/alarm';
-import { BrowserWindow, ipcMain } from 'electron';
+import { BrowserWindow } from 'electron';
+import { sortAlarmsByHours } from '../utils/sortAlarmsByHours';
 
 export class AlarmController {
 
   static async getAllAlarms(): Promise<Alarm[] | undefined> {
     try {
       const alarms = await AlarmService.getAllAlarms();
-      alarms.sort((a, b) => {
-        const timeA = new Date(a.alarm_time).getTime();
-        const timeB = new Date(b.alarm_time).getTime();
-        return timeA - timeB;
-      });
+      sortAlarmsByHours(alarms);
       return alarms;
     } catch (error) {
       console.log("getAlarms failed :", error)
