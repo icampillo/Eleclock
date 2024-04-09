@@ -7,7 +7,13 @@ export class AlarmController {
 
   static async getAllAlarms(): Promise<Alarm[] | undefined> {
     try {
-      return AlarmService.getAllAlarms();
+      const alarms = await AlarmService.getAllAlarms();
+      alarms.sort((a, b) => {
+        const timeA = new Date(a.alarm_time).getTime();
+        const timeB = new Date(b.alarm_time).getTime();
+        return timeA - timeB;
+      });
+      return alarms;
     } catch (error) {
       console.log("getAlarms failed :", error)
     }
@@ -22,7 +28,7 @@ export class AlarmController {
     }
   }
 
-  static async deleteAlarm(id: any): Promise<void> {
+  static async deleteAlarm(id: number): Promise<void> {
     try {
       return AlarmService.deleteAlarm(id);
     } catch (error) {
@@ -30,7 +36,7 @@ export class AlarmController {
     }
   }
 
-  static async handleAlarmOnOff(id: any, is_active: any): Promise<void> {
+  static async handleAlarmOnOff(id: number, is_active: boolean): Promise<void> {
     try {
       return AlarmService.handleAlarmOnOff(id, is_active);
     } catch (error) {
