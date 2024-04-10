@@ -23,8 +23,10 @@ Server : electron / SQLite
 
 Pour utiliser l'application localement, suivez ces étapes :
 
-Clonez ce dépôt sur votre machine locale.
-
+Clonez ce dépôt sur votre machine locale en utilisant ``` git clone ```
+Installer les dependances du projet ``` npm install ```
+Build le projet ``` npm run build ```
+Lancer le projet ``` npm run electron-start ```
 ```
 npm install
 npm run build && tsc
