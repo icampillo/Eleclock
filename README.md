@@ -15,6 +15,7 @@ Le projet Eleclock est une horloge avec gestion d'alarme. Elle prermet aussi aux
 Frontend : typescript / react <br/>
 Server : electron / SQLite
 
+# Capture d'écran
 
-
+<img width="797" alt="image" src="https://github.com/icampillo/Eleclock/assets/25935434/dd2ec5ef-bfce-4be5-9163-6d0003ac7207">
 
