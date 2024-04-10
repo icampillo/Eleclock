@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import TimeCalculator from "../components/calcultime";
 import {
     Clock,
 } from "../components";
@@ -8,6 +8,7 @@ export const TimeView = () => (
     <div>
         <div className='clock-content'>
             <Clock />
+            <TimeCalculator />
         </div>
     </div>
 );

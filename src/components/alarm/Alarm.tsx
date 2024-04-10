@@ -58,7 +58,7 @@ export const AlarmComponent: React.FC<AlarmProps> = ({ alarms, fetchData }) => {
       </div>
       <div className='alarms-content'>
         {alarms.map((alarm: Alarm, index: number) => (
-          <AlarmRow alarm={alarm} index={index} deleteAlarm={handleDelete} fetchData={fetchData} key={index} />
+          <AlarmRow alarm={alarm} index={index} deleteAlarm={handleDelete} key={index} />
         ))}
       </div>
       <ToastContainer />

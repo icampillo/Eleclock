@@ -11,10 +11,9 @@ type AlarmRowProps = {
     alarm: Alarm;
     index: number;
     deleteAlarm: (id: number) => void;
-    fetchData: () => void;
 };
 
-export const AlarmRow: React.FC<AlarmRowProps> = ({ alarm, index, deleteAlarm, fetchData }) => {
+export const AlarmRow: React.FC<AlarmRowProps> = ({ alarm, index, deleteAlarm }) => {
     const [checked, setChecked] = React.useState(alarm.is_active);
 
     const handleChange = async (checked: boolean, id: number) => {
@@ -25,6 +24,10 @@ export const AlarmRow: React.FC<AlarmRowProps> = ({ alarm, index, deleteAlarm, f
             console.error('Error adding alarm:', error);
         }
     };
+
+    useEffect(() => {
+        setChecked(alarm.is_active);
+    }, [alarm]);
 
     return (
         <div className="alarm-row-content">
