@@ -18,7 +18,7 @@ export class AlarmController {
 
   static async createAlarm(time: Date): Promise<void> {
     try {
-      const newAlarmId = await AlarmService.createAlarm(time);
+      await AlarmService.createAlarm(time);
     } catch (error) {
       console.log("createAlarms failed :", error)
     }
