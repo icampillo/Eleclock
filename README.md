@@ -32,7 +32,7 @@ Pour utiliser l'application localement, suivez ces étapes :
 
 - Electron x TypesScript (back)
 - Sqlite
-- React typesScript (front)
+- React typeScript (front)
 
 # Fonctionnement
 
