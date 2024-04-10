@@ -19,3 +19,11 @@ Server : electron / SQLite
 
 <img width="797" alt="image" src="https://github.com/icampillo/Eleclock/assets/25935434/dd2ec5ef-bfce-4be5-9163-6d0003ac7207">
 
+# Installation
+
+Pour utiliser l'application localement, suivez ces étapes :
+
+Clonez ce dépôt sur votre machine locale.
+Installez les dépendances en exécutant la commande npm install.
+Build le projet : npm run build && tsc
+Lancez l'application en exécutant la commande <npm run electron-start>.
