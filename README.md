@@ -34,3 +34,6 @@ Pour utiliser l'application localement, suivez ces étapes :
 - Sqlite
 - React typesScript (front)
 
+# Auteur
+
+Ilan Campillo
