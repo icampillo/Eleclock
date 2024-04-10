@@ -1,4 +1,4 @@
-import TimeCalculator from "../components/calcultime";
+import LifeTime from "../components/lifeTime/lifeTime";
 import {
     Clock,
 } from "../components";
@@ -8,7 +8,7 @@ export const TimeView = () => (
     <div>
         <div className='clock-content'>
             <Clock />
-            <TimeCalculator />
+            <LifeTime />
         </div>
     </div>
 );

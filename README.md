@@ -37,15 +37,15 @@ Pour utiliser l'application localement, suivez ces étapes :
 # Fonctionnement
 
 1. choisir une heure et enregistrer l'alarme.
-2. des que l'alarme se declanche une modal apparait avec l'heure de l'alarme et un bouton desactiver.
-3. possible de desactiver/activer/supprimer les alarmes à sa guise.
+2. Des que l'alarme se declanche une modal apparait avec l'heure de l'alarme et un bouton desactiver.
+3. Possible de desactiver/activer/supprimer les alarmes.
 
 # Ameliorations
 
-- A ce jour les alarmes ne prennent en compte que les heures. Il faudrait rajouter un ou des jours ou l'alarmes doit s'activer.
-- Ajouter un systeme de repetition comme avec l'iphone.
-- Ajouter une selection de plusieurs sonneries
-- Ajouter un onglet avec les heures des plus grandes villes du monde (NY, Tokyo, Carnoux-en-Provence, etc..) 
+- A ce jour les alarmes ne prennent en compte que les heures. Il faudrait rajouter un/des jour(s) ou l'alarmes doit s'activer.
+- Ajouter un système de répétition comme sur l'iPhone.
+- Ajouter une sélection de plusieurs sonneries.
+- Ajouter un onglet avec les heures des plus grandes villes du monde (NY, Tokyo, Carnoux-en-Provence, etc...)
 
 # Auteur
 

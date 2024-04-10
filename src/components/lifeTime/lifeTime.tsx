@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-import './timeCalculator.css';
+import './lifeTime.css';
 
-import coeur from '../res/coeur.png';
-import lune from '../res/lune.png';
-import soleil from '../res/soleil.png';
+import coeur from '../../res/coeur.png';
+import lune from '../../res/lune.png';
+import soleil from '../../res/soleil.png';
 
-const TimeCalculator: React.FC = () => {
+const LifeTime: React.FC = () => {
   const [birthdate, setBirthdate] = useState<string>('');
   const [inputError, setInputError] = useState<boolean>(false);
   const [timeElapsed, setTimeElapsed] = useState<string>('');
@@ -89,4 +89,4 @@ const TimeCalculator: React.FC = () => {
   );
 };
 
-export default TimeCalculator;
+export default LifeTime;

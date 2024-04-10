@@ -58,7 +58,6 @@ ipcMain.handle('get-alarms', async (event, data) => {
 ipcMain.handle('add-alarm', (event, args) => {
   const time = args.time;
   try {
-    console.log('Ajout d\'une alarme à', time, '.')
     return AlarmController.createAlarm(time);
   } catch (error) {
     console.error('Error adding alarm:', error);
@@ -80,7 +79,6 @@ ipcMain.handle('delete-alarm', async (event, args) => {
 ipcMain.handle('handle-alarm-on-off', async (event, args) => {
   const id = args.id;
   const is_active = args.is_active;
-  console.log('id', id)
   try {
     await AlarmController.handleAlarmOnOff(id, is_active);
     return { success: true };
