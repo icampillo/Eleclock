@@ -5,9 +5,16 @@ Le projet Eleclock est une horloge avec gestion d'alarme. Elle prermet aussi aux
 - le nombre d'heures passées à dormir 
 - le nombre d'heures éveillées.
 
+# Fonctionnalités
+
+- Programmer une alarme
+- Calcul temps de vie
+
 ## application Electron :
 
 Frontend : typescript / react <br/>
 Server : electron / SQLite
+
+
 
 
