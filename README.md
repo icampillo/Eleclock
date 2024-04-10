@@ -25,6 +25,12 @@ Pour utiliser l'application localement, suivez ces étapes :
 
 - Clonez ce dépôt sur votre machine locale en utilisant ``` git clone ```
 - Installer les dependances du projet ``` npm install ```
-- Build le projet ``` npm run build ```
+- Build le projet ``` npm run build && tsc ```
 - Lancer le projet ``` npm run electron-start ```
+
+# Technologies utilisées
+
+- Electron x TypesScript (back)
+- Sqlite
+- React typesScript (front)
 
