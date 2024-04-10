@@ -82,7 +82,7 @@ const LifeTime: React.FC = () => {
           </div>
         )}
         {inputError && (
-          <p style={{ color: 'red' }}>Veuillez entrer une date de naissance valide.</p>
+          <p style={{ color: '#AE281E' }}>Veuillez entrer une date de naissance valide.</p>
         )}
       </div>
     </div>

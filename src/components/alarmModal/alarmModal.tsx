@@ -5,12 +5,12 @@ import { formatTimeHHMM } from '../../helper';
 
 import "./alarmModal.css";
 
-interface AlarmPopupProps {
+interface AlarmModalProps {
   alarm: Alarm;
   onDismiss: () => void;
 }
 
-const AlarmPopup: React.FC<AlarmPopupProps> = ({ alarm, onDismiss }) => {
+const AlarmModal: React.FC<AlarmModalProps> = ({ alarm, onDismiss }) => {
   const [audio] = useState(new Audio("https://universal-soundbank.com/sounds/8500.mp3"));
 
   const handleDismiss = async () => {
@@ -24,8 +24,8 @@ const AlarmPopup: React.FC<AlarmPopupProps> = ({ alarm, onDismiss }) => {
   }, []);
 
   return (
-    <div className="popup-overlay">
-      <div className="popup-content">
+    <div className="modal-overlay">
+      <div className="modal-content">
         <h2 className='title-modal'>Alarme</h2>
         <p className='alarm-modal'>{formatTimeHHMM(alarm.alarm_time)}</p>
         <div className='centered'>
@@ -36,4 +36,4 @@ const AlarmPopup: React.FC<AlarmPopupProps> = ({ alarm, onDismiss }) => {
   );
 };
 
-export default AlarmPopup;
+export default AlarmModal;

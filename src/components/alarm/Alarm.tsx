@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { AlarmRow } from '../alarmRow/alarm-row';
 import { Alarm } from '../../types';
@@ -18,6 +18,7 @@ interface AlarmProps {
 }
 
 export const AlarmComponent: React.FC<AlarmProps> = ({ alarms, fetchData }) => {
+  const [inputError, setInputError] = useState<boolean>(false);
 
   const handleDelete = async (id: number) => {
     try {
@@ -41,6 +42,11 @@ export const AlarmComponent: React.FC<AlarmProps> = ({ alarms, fetchData }) => {
 
   const handleSaveAlarm = async () => {
     const inputTime = document.querySelector('input[type="time"]') as HTMLInputElement;
+    if (!inputTime.value) {
+      setInputError(true);
+      return;
+    }
+    setInputError(false);
     const selectedTime = inputTime.value;
     const [hours, minutes] = selectedTime.split(':');
     const newTime = new Date();
@@ -56,6 +62,9 @@ export const AlarmComponent: React.FC<AlarmProps> = ({ alarms, fetchData }) => {
         <input className='input-time' type="time" />
         <button onClick={handleSaveAlarm}>Save</button>
       </div>
+      {inputError && (
+          <p style={{ color: '#AE281E' }}>Veuillez entrer une date de naissance valide.</p>
+        )}
       <div className='alarms-content'>
         {alarms.map((alarm: Alarm, index: number) => (
           <AlarmRow alarm={alarm} index={index} deleteAlarm={handleDelete} key={index} />

@@ -6,17 +6,17 @@ import {
 
 import "./app.css"
 import { Alarm } from './types';
-import AlarmPopup from './components/alarmModal/alarmModal';
+import AlarmModal from './components/alarmModal/alarmModal';
 import { getAlarms } from './services';
 
 export const App = () => {
   const [activeTab, setActiveTab] = React.useState('alarm');
   const [alarm, setAlarm] = useState({} as Alarm);
   const [alarms, setAlarms] = useState([] as Alarm[]);
-  const [showPopup, setShowPopup] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleDismiss = async () => {
-    setShowPopup(false);
+    setShowModal(false);
     await fetchData();
   };
 
@@ -33,7 +33,7 @@ export const App = () => {
     fetchData();
     window.ipcRender.on('alarm-alert', async (_event: Electron.IpcRendererEvent, alarm: Alarm) => {
       setAlarm(alarm);
-      setShowPopup(true);
+      setShowModal(true);
     });
   }, []);
 
@@ -51,7 +51,7 @@ export const App = () => {
         {activeTab === 'alarm' && <AlarmView alarms={alarms} fetchData={fetchData} />}
         {activeTab === 'clock' && <TimeView />}
       </div>
-      {showPopup && <AlarmPopup onDismiss={handleDismiss} alarm={alarm} />}
+      {showModal && <AlarmModal onDismiss={handleDismiss} alarm={alarm} />}
     </div>
   );
 };
